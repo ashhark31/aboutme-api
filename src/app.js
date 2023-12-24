@@ -16,7 +16,7 @@ const {
     updateExpInfoCtrl, 
     retrieveExpInfoCtrl,
     deleteExpInfoCtrl
-} = require('./routes/ExpInfoCtrlRoutes')
+} = require('./routes/expInfoCtrlRoutes')
 
 const {
     createProjectInfoCtrl,
