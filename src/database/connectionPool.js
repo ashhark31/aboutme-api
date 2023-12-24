@@ -1,15 +1,14 @@
 const mongoose = require("mongoose")
 const dotenv = require('dotenv')
-const ENVPropertyValues = require('../utils/envProperties')
 const { logger } = require('../config/logger')
 
 dotenv.config()
 
 const DBInit = async () => {
     try{
-        const user = ENVPropertyValues.properties.get("NODE_MONGODB_USER");
-        const password = ENVPropertyValues.properties.get("NODE_MONGODB_PASSWORD");
-        const connectionString = ENVPropertyValues.properties.get("NODE_MONGODB_CONNECTIONSTRING");
+        const user = "ashhark31";
+        const password = "aboutmecloudenv001100";
+        const connectionString = "aboutme.nguarqs.mongodb.net/?retryWrites=true&w=majority";
         await mongoose.connect(`mongodb+srv://${user}:${password}@${connectionString}`)
         .then((pool) => {
             logger.info({

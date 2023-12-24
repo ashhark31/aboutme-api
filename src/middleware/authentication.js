@@ -10,7 +10,7 @@ const authentication = async (req, res, next) => {
 
         const decode = await jwt.verify(
             token, 
-            ENVPropertyValues.properties.get('JWT_SECRET_KEY')
+            'shhhhh'
         )
 
         req.user = decode;

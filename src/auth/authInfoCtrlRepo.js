@@ -1,6 +1,5 @@
 const { logger } = require("../config/logger");
 const { RegistrationAuthModel } = require("./user-schema-methods");
-const ENVPropertyValues = require("../utils/envProperties")
 
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -23,7 +22,7 @@ const registerAuthInfoCtrlDetails = async (reqData) => {
         const user = await newRegistrationAuthUser.save();
         const token = await jwt.sign(
             {id: user._id, email: user.email},
-            ENVPropertyValues.properties.get("JWT_SECRET_KEY"),
+            'shhhhh',
             { expiresIn: '2h' }
         )
 
@@ -91,7 +90,7 @@ const loginAuthInfoCtrlDetails = async (reqData) => {
 
         const token = await jwt.sign(
             {id: user._id, email: user.email},
-            ENVPropertyValues.properties.get('JWT_SECRET_KEY'),
+            'shhhhh',
             { expiresIn: '2h' }
         )
 
