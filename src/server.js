@@ -6,7 +6,7 @@ const { PORT = 3100 } = process.env
 app.listen(PORT, () => {
     DBInit()
     logger.info({
-        message: `Server is running http://localhost:${PORT}...`
+        message: `Server is running ${PORT}...`
     });
 })
  

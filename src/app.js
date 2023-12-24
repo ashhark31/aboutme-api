@@ -56,7 +56,7 @@ const {
 const landing_zone = require("./landing-zone/landing_zone")
 const authentication = require("./auth/auth");
 
-const corsConfig = {credentials: true, origin: 'http://localhost:3000'};
+const corsConfig = {credentials: true};
 router.use(cors(corsConfig))
 // router.options('*', cors())
 router.use(bodyParser.json({ limit: "999mb" }))
