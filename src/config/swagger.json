@@ -1,0 +1,2737 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Metadata Maintanance Tool"
+    },
+    "basaPath": "",
+    "displayRequestDuration": true,
+    "timeout": 300,
+    "paths": {
+        "/v1/createBaseInfoCtrl": {
+            "post": {
+                "tags": ["Base Info Control"],
+                "summary": "Create Base Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createBaseInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createBaseInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 27072000,
+                                "headlineInfoCtrl": "Software Engineer",
+                                "userFirstName": "Mohammad",
+                                "userLastName": "Ashhar",
+                                "userDOBCtrl": "2000-07-27",
+                                "addressCityInfo": "Jabalpur",
+                                "addressStateInfo": "MP",
+                                "addressCountryInfo": "India",
+                                "userEmailInfo": "ashhark31@gmail.com",
+                                "linkedinInfoCtrl": "https://www.linkedin.com/in/mdashhar/",
+                                "twitterInfoCtrl": "https://twitter.com/MohammadAs26913",
+                                "baseProfileCtrl": ""
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveBaseInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Base Info Control"],
+                "summary": "Retrieve Base Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateBaseInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Base Info Control"],
+                "summary": "Update Base Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateBaseInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateBaseInfoCtrlObject"
+                            },
+                            "example": {
+                                "headlineInfoCtrl": "Software Engineer",
+                                "userFirstName": "Mohammad",
+                                "userLastName": "Ashhar",
+                                "userDOBCtrl": "2000-07-27",
+                                "addressCityInfo": "Jabalpur",
+                                "addressStateInfo": "MP",
+                                "addressCountryInfo": "India",
+                                "userEmailInfo": "ashhark31@gmail.com",
+                                "linkedinInfoCtrl": "https://www.linkedin.com/in/mdashhar/",
+                                "twitterInfoCtrl": "https://twitter.com/MohammadAs26913",
+                                "baseProfileCtrl": ""
+
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteBaseInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Base Info Control"],
+                "summary": "Delete Base Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createExpInfoCtrl": {
+            "post": {
+                "tags": ["Experience Info Control"],
+                "summary": "Create Experience Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createExpInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createExpInfoCtrlObject"
+                            },
+                            "example": [
+                                {
+                                    "key": 512641,
+                                    "companyName": "CGI",
+                                    "position": "Associate Software Engineer",
+                                    "startDate": "2023-07-03",
+                                    "endDate": null,
+                                    "currentlyWorking": true,
+                                    "description": "Worked as a Full Stack Developer"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveExpInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Experience Info Control"],
+                "summary": "Retrieve Experience Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateExpInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Experience Info Control"],
+                "summary": "Update Experience Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateExpInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateExpInfoCtrlObject"
+                            },
+                            "example": {
+                                "companyName": "CGI",
+                                "position": "Associate Software Engineer",
+                                "startDate": "2023-07-03",
+                                "endDate": null,
+                                "currentlyWorking": true,
+                                "description": "Worked as a Full Stack Developer"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteExpInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Experience Info Control"],
+                "summary": "Delete Experience Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+        
+        "/v1/createProjectInfoCtrl": {
+            "post": {
+                "tags": ["Project Info Control"],
+                "summary": "Create Project Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createProjectInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createProjectInfoCtrlObject"
+                            },
+                            "example": [
+                                {
+                                    "key": 121212,
+                                    "projectTitle": "myPortfolio",
+                                    "url": "https://www.myPortfolio.com",
+                                    "techUsed": ["React.JS", "Express.JS", "MongoDB", "Node.JS"],
+                                    "description": "Presenting personal portfolio website using MERN stack."
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveProjectInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Project Info Control"],
+                "summary": "Retrieve Project Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateProjectInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Project Info Control"],
+                "summary": "Update Project Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateProjectInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateProjectInfoCtrlObject"
+                            },
+                            "example": {
+                                "projectTitle": "myPortfolio",
+                                "url": "https://www.myPortfolio.com",
+                                "techUsed": ["React.JS", "Express.JS", "MongoDB", "Node.JS"],
+                                "description": "Presenting personal portfolio website using MERN stack."
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteProjectInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Project Info Control"],
+                "summary": "Delete Project Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+        
+        "/v1/createSkillInfoCtrl": {
+            "post": {
+                "tags": ["Skill Info Control"],
+                "summary": "Create Skill Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createSkillInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createSkillInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 323232,
+                                "technical": [
+                                    {
+                                        "name": "Frontend",
+                                        "keywords": ["React.JS", "Angular.JS"]
+                                    },
+                                    {
+                                        "name": "Backend",
+                                        "keywords": ["Node.JS", "Core Java"]
+                                    }
+                                ],
+                                "behaivioral": [
+                                    {
+                                        "name": "Creativity",
+                                        "keywords": ["Critical Thinking", "Visual Thinking"]
+                                    },
+                                    {
+                                        "name": "Problem Solving",
+                                        "keywords": ["Algorithms", "Data Structures"]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveSkillInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Skill Info Control"],
+                "summary": "Retrieve Skill Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateSkillInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Skill Info Control"],
+                "summary": "Update Skill Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateSkillInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateSkillInfoCtrlObject"
+                            },
+                            "example": {
+                                "technical": [
+                                    {
+                                        "name": "Frontend",
+                                        "keywords": ["React.JS", "Angular.JS"]
+                                    },
+                                    {
+                                        "name": "Backend",
+                                        "keywords": ["Node.JS", "Core Java"]
+                                    }
+                                ],
+                                "behaivioral": [
+                                    {
+                                        "name": "Creativity",
+                                        "keywords": ["Critical Thinking", "Visual Thinking"]
+                                    },
+                                    {
+                                        "name": "Problem Solving",
+                                        "keywords": ["Algorithms", "Data Structures"]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteSkillInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Skill Info Control"],
+                "summary": "Delete Skill Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createAchvmntInfoCtrl": {
+            "post": {
+                "tags": ["Achievement Info Control"],
+                "summary": "Create Achievement Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createAchvmntInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createAchvmntInfoCtrlObject"
+                            },
+                            "example": [
+                                {
+                                    "key": 121212,
+                                    "achvmntTitle": "Problem Solving",
+                                    "url": "https://www.hackerrank.com",
+                                    "description": "4 star coder"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveAchvmntInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Achievement Info Control"],
+                "summary": "Retrieve Achievement Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateAchvmntInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Achievement Info Control"],
+                "summary": "Update Achievement Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateAchvmntInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateAchvmntInfoCtrlObject"
+                            },
+                            "example":  {
+                                "achvmntTitle": "Problem Solving",
+                                "url": "https://www.hackerrank.com",
+                                "description": "4 star coder"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteAchvmntInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Achievement Info Control"],
+                "summary": "Delete Achievement Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createCrtificationInfoCtrl": {
+            "post": {
+                "tags": ["Certification Info Control"],
+                "summary": "Create Certification Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createCrtificationInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createCrtificationInfoCtrlObject"
+                            },
+                            "example": [
+                                {
+                                    "key": 454545,
+                                    "certName": "Python",
+                                    "url": "drive.google.com",
+                                    "description": "Python Certification"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveCrtificationInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Certification Info Control"],
+                "summary": "Retrieve Certification Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateCrtificationInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Certification Info Control"],
+                "summary": "Update Certification Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateCrtificationInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateCrtificationInfoCtrlObject"
+                            },
+                            "example":  {
+                                "certName": "Python",
+                                "url": "drive.google.com",
+                                "description": "Python Certification"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteCrtificationInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Certification Info Control"],
+                "summary": "Delete Certification Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createKeyInfoCtrl": {
+            "post": {
+                "tags": ["Key Info Control"],
+                "summary": "Create Key Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createKeyInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createKeyInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 1000001,
+                                "baseInfoCtrlKey": 27072000,
+                                "empId": [512641, 654565],
+                                "projectId": [121212],
+                                "skillId": 323232,
+                                "achvmntId": [121212],
+                                "certId": [454545]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveKeyInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Key Info Control"],
+                "summary": "Retrieve Key Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateKeyInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Key Info Control"],
+                "summary": "Update Key Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateKeyInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateKeyInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 27072000,
+                                "key": [512641, 654565],
+                                "key": [121212],
+                                "key": 323232,
+                                "key": [121212],
+                                "key": [454545]
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteKeyInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Key Info Control"],
+                "summary": "Delete Key Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+
+        "/v1/createIntroInfoCtrl": {
+            "post": {
+                "tags": ["Intro Info Control"],
+                "summary": "Create Intro Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createIntroInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createIntroInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 1000001,
+                                "description": "Welcome to myPortfolio."
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveIntroInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Intro Info Control"],
+                "summary": "Retrieve Intro Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateIntroInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Intro Info Control"],
+                "summary": "Update Intro Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateIntroInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateIntroInfoCtrlObject"
+                            },
+                            "example": {
+                                "description": "Welcome to myPortfolio."
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteIntroInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Intro Info Control"],
+                "summary": "Delete Intro Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createTestiInfoCtrl": {
+            "post": {
+                "tags": ["Testimonials Info Control"],
+                "summary": "Create Testimonials Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createTestiInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createTestiInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 1000001,
+                                "userName": "mak",
+                                "headline": "Developer",
+                                "feedback": "This site is very interactive.",
+                                "userProfile": "<Buffer ef bf bd ef bf bd ef bf bd ef bf bd 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ef bf bd ef bf bd 00 43 00 03 02 02 03 02 02 03 03 03 03 04 03 03 ... 37511 more bytes>"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveTestiInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Testimonials Info Control"],
+                "summary": "Retrieve Testimonials Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateTestiInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Testimonials Info Control"],
+                "summary": "Update Testimonials Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateTestiInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateTestiInfoCtrlObject"
+                            },
+                            "example": {
+                                "userName": "mak",
+                                "headline": "Developer",
+                                "feedback": "This site is very interactive.",
+                                "userProfile": "<Buffer ef bf bd ef bf bd ef bf bd ef bf bd 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ef bf bd ef bf bd 00 43 00 03 02 02 03 02 02 03 03 03 03 04 03 03 ... 37511 more bytes>"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteTestiInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Testimonials Info Control"],
+                "summary": "Delete Testimonials Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/createBlogInfoCtrl": {
+            "post": {
+                "tags": ["Blog Info Control"],
+                "summary": "Create Blog Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createBlogInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createBlogInfoCtrlObject"
+                            },
+                            "example": {
+                                "key": 1000001,
+                                "headline": "IT Jobs",
+                                "content": "Recession is still going on. There is still less job opportunity.",
+                                "image": "<Buffer ef bf bd ef bf bd ef bf bd ef bf bd 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ef bf bd ef bf bd 00 43 00 03 02 02 03 02 02 03 03 03 03 04 03 03 ... 37511 more bytes>"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveBlogInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Blog Info Control"],
+                "summary": "Retrieve Blog Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        }
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateBlogInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Blog Info Control"],
+                "summary": "Update Blog Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateBlogInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateBlogInfoCtrlObject"
+                            },
+                            "example": {
+                                "headline": "IT Jobs",
+                                "content": "Recession is still going on. There is still less job opportunity.",
+                                "image": "<Buffer ef bf bd ef bf bd ef bf bd ef bf bd 00 10 4a 46 49 46 00 01 01 00 00 01 00 01 00 00 ef bf bd ef bf bd 00 43 00 03 02 02 03 02 02 03 03 03 03 04 03 03 ... 37511 more bytes>"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteBlogInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Blog Info Control"],
+                "summary": "Delete Blog Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
+        "/v1/auth/registerAuthInfoCtrl": {
+            "post": {
+                "tags": ["Registration Auth Info Control"],
+                "summary": "Create Registration Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createRegisAuthInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createRegisAuthInfoCtrlObject"
+                            },
+                            "example": {
+                                "firstName": "Mohammad",
+                                "lastName": "Ashhar",
+                                "email": "ashhark31@gmail.com",
+                                "password": "Ashhar@123"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/auth/loginAuthInfoCtrl": {
+            "post": {
+                "tags": ["Login Auth Info Control"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createLoginAuthInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createLoginAuthInfoCtrlObject"
+                            },
+                            "example": {
+                                "email": "ashhark31@gmail.com",
+                                "password": "Ashhar@123"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/auth/dashboard": {
+            "get": {
+                "tags": ["Dashboard Auth Info Control"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                }
+            }
+        }
+    },
+
+    "definitions": {
+        "createBaseInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number"
+                },
+                "headlineInfoCtrl": {
+                    "type": "string"
+                },
+                "userFirstName": {
+                    "type": "string"
+                },
+                "userLastName": {
+                    "type": "string"
+                },
+                "userDOBCtrl": {
+                    "type": "string"
+                },
+                "addressCityInfo": {
+                    "type": "string"
+                },
+                "addressStateInfo": {
+                    "type": "string"
+                },
+                "addressCountryInfo": {
+                    "type": "string"
+                },
+                "userEmailInfo": {
+                    "type": "string"
+                },
+                "linkedinInfoCtrl": {
+                    "type": "string"
+                },
+                "twitterInfoCtrl": {
+                    "type": "string"
+                },
+                "baseProfileCtrl": {
+                    "type": "string",
+                    "format": "binary"
+                }
+            },
+            "required": [
+                "key",
+                "headlineInfoCtrl",
+                "userFirstName",
+                "userLastName",
+                "userEmailInfo",
+                "linkedinInfoCtrl"
+            ]
+        },
+        "updateBaseInfoCtrlObject": {
+            "properties": {
+                "headlineInfoCtrl": {
+                    "type": "string"
+                },
+                "userFirstName": {
+                    "type": "string"
+                },
+                "userLastName": {
+                    "type": "string"
+                },
+                "userDOBCtrl": {
+                    "type": "string"
+                },
+                "addressCityInfo": {
+                    "type": "string"
+                },
+                "addressStateInfo": {
+                    "type": "string"
+                },
+                "addressCountryInfo": {
+                    "type": "string"
+                },
+                "userEmailInfo": {
+                    "type": "string"
+                },
+                "linkedinInfoCtrl": {
+                    "type": "string"
+                },
+                "twitterInfoCtrl": {
+                    "type": "string"
+                },
+                "baseProfileCtrl": {
+                    "type": "string",
+                    "format": "binary"
+                }
+            }
+        },
+
+        "createExpInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "companyName": {
+                    "type": "string",
+                    "required": true
+                },
+                "position": {
+                    "type": "string",
+                    "required": true
+                },
+                "startDate": {
+                    "type": "string",
+                    "required": true
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "currentlyWorking": {
+                    "type": "boolean",
+                    "required": true
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateExpInfoCtrlObject": {
+            "properties": {
+                "companyName": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "currentlyWorking": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "createProjectInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "projectTitle": {
+                    "type": "string",
+                    "required": true
+                },
+                "url": {
+                    "type": "string"
+                },
+                "techUsed": {
+                    "type": "object"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateProjectInfoCtrlObject": {
+            "properties": {
+                "projectTitle": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "techUsed": {
+                    "type": "object"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "createSkillInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "technical": {
+                    "name": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "keywords": {
+                        "type": "string",
+                        "required": true
+                    }
+                },
+                "behaivioral": {
+                    "name": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "keywords": {
+                        "type": "string",
+                        "required": true
+                    }
+                }
+            }
+        },
+        "updateSkillInfoCtrlObject": {
+            "properties": {
+                "technical": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "type": "string"
+                    }
+                },
+                "behaivioral": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "keywords": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+
+        "createAchvmntInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "achvmntTitle": {
+                    "type": "string",
+                    "required": true
+                },
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateAchvmntInfoCtrlObject": {
+            "properties": {
+                "achvmntTitle": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "createCrtificationInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "certName": {
+                    "type": "string",
+                    "required": true
+                },
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "updateCrtificationInfoCtrlObject": {
+            "properties": {
+                "certName": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+
+        "createKeyInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "key": {
+                    "type": "object",
+                    "required": true
+                },
+                "key": {
+                    "type": "object",
+                    "required": true
+                },
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "key": {
+                    "type": "object",
+                    "required": true
+                },
+                "key": {
+                    "type": "object",
+                    "required": true
+                }
+            }
+        },
+        "updateKeyInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number"
+                },
+                "key": {
+                    "type": "object"
+                },
+                "key": {
+                    "type": "object"
+                },
+                "key": {
+                    "type": "number"
+                },
+                "key": {
+                    "type": "object"
+                },
+                "key": {
+                    "type": "object"
+                }
+            }
+        },
+
+
+        "createIntroInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "description": {
+                    "type": "string",
+                    "required": true
+                }                
+            }
+        },
+        "updateIntroInfoCtrlObject": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                }                
+            }
+        },
+
+        "createTestiInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "userName": {
+                    "type": "string",
+                    "required": true
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "feedback": {
+                    "type": "string",
+                    "required": true
+                },
+                "userProfile": {
+                    "type": "string",
+                    "format": "binary"                    
+                }
+            }
+        },
+        "updateTestiInfoCtrlObject": {
+            "properties": {
+                "userName": {
+                    "type": "string"
+                },
+                "headline": {
+                    "type": "string"
+                },
+                "feedback": {
+                    "type": "string"
+                },
+                "userProfile": {
+                    "type": "string",
+                    "format": "binary"                    
+                }
+            } 
+        },
+
+        "createBlogInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "headline": {
+                    "type": "string",
+                    "required": true
+                },
+                "content": {
+                    "type": "string",
+                    "required": true
+                },
+                "image": {
+                    "type": "string",
+                    "format": "binary"
+                }
+            }
+        },
+        "updateBlogInfoCtrlObject": {
+            "properties": {
+                "headline": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "binary"
+                }
+            }
+        },
+
+        "createRegisAuthInfoCtrlObject": {
+            "properties": {
+                "firstName": {
+                    "type": "string",
+                    "required": true
+                },
+                "lastName": {
+                    "type": "string",
+                    "required": true
+                },
+                "email": {
+                    "type": "string",
+                    "required": true
+                },
+                "password": {
+                    "type": "string",
+                    "required": true
+                }
+            }
+        },
+        "createLoginAuthInfoCtrlObject": {
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "required": true
+                },
+                "password": {
+                    "type": "string",
+                    "required": true
+                }
+            }
+        }
+    }
+}
