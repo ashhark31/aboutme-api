@@ -3,7 +3,7 @@ const {
     updateExpInfoCtrlService, 
     retrieveExpInfoCtrlService,
     deleteExpInfoCtrlService
-} = require("../services/ExpInfoCtrlService");
+} = require("../services/expInfoCtrlService");
 
 
 const createExpInfoCtrl = async (req,res) => {
