@@ -56,7 +56,8 @@ const {
 const landing_zone = require("./landing-zone/landing_zone")
 const authentication = require("./auth/auth");
 
-const corsConfig = {credentials: true};
+// const corsConfig = {credentials: true, origin: 'http://localhost:3000'};
+const corsConfig = {credentials: true, origin: 'https://aboutme-ui-service.netlify.app'};
 router.use(cors(corsConfig))
 // router.options('*', cors())
 router.use(bodyParser.json({ limit: "999mb" }))
