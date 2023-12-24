@@ -108,10 +108,9 @@ const loginAuthInfoCtrl = async (req,res) => {
 
 const logoutAuthInfoCtrl = async (req,res) => {
     try{
-        res.status(200).cookie("token", "", { 
-            expires: new Date(0),
-            domain:'https://aboutme-ui-service.onrender.com', 
-            path: '/' 
+        res.status(200).clearCookie("token", {
+            sameSite: "none",
+            secure: true,
         });
         return res.send({ status:200, message: "Successfully Logged Out" })
     } catch (err) {
