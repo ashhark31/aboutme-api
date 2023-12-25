@@ -8,16 +8,23 @@ const authentication = async (req, res, next) => {
             return res.send({ status:400, message: 'Please login first.' });
         }
 
-        const decode = await jwt.verify(
-            token, 
-            'shhhhh'
-        )
+        const decode = await jwt.verify(token, 'shhhhh', (err,decoded) => {
+            if(err){
+                if (err.name === 'TokenExpiredError') {
+                    return res.status(400).json({ error: 'Token expired' });
+                }
+            }
+            return decoded;
+        })
 
         req.user = decode;
         return next();
 
     } catch (err) {
-        res.send({ status:400, message: err })
+        logger.error({
+            message: `Something went wrong while execution ${err.message}`
+        })
+        throw err;
     }
 }
 
