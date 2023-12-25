@@ -17,10 +17,7 @@ const authentication = async (req, res, next) => {
         return next();
 
     } catch (err) {
-        logger.error({
-            message: `Something went wrong while execution ${err.message}`
-        })
-        throw err;
+        res.send({ status:400, message: err })
     }
 }
 
