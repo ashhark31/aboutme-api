@@ -23,7 +23,7 @@ const registerAuthInfoCtrlDetails = async (reqData) => {
         const token = await jwt.sign(
             {id: user._id, email: user.email},
             'shhhhh',
-            { expiresIn: '2h' }
+            { expiresIn: '1d' }
         )
 
         user.token = token;
@@ -91,7 +91,7 @@ const loginAuthInfoCtrlDetails = async (reqData) => {
         const token = await jwt.sign(
             {id: user._id, email: user.email},
             'shhhhh',
-            { expiresIn: '2h' }
+            { expiresIn: '1d' }
         )
 
         user.token = token;
