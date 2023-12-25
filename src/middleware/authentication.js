@@ -11,7 +11,7 @@ const authentication = async (req, res, next) => {
         const decode = await jwt.verify(token, 'shhhhh', (err,decoded) => {
             if(err){
                 if (err.name === 'TokenExpiredError') {
-                    return res.status(400).json({ error: 'Token expired' });
+                    return res.send({ status:400, message: 'Token expired.' });
                 }
             }
             return decoded;
