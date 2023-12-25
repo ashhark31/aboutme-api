@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken")
-const ENVPropertyValues = require("../utils/envProperties")
+const {logger} = require("../config/logger")
 
 const authentication = async (req, res, next) => {
     try{
