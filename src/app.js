@@ -11,6 +11,13 @@ const {
     deleteBaseInfoCtrl
 }  = require("./routes/baseInfoCtrlRoutes")
 
+const {
+    createEduInfoCtrl,
+    updateEduInfoCtrl,
+    retrieveEduInfoCtrl,
+    deleteEduInfoCtrl
+} = require("./routes/eduInfoCtrlRoutes")
+
 const { 
     createExpInfoCtrl, 
     updateExpInfoCtrl, 
@@ -75,6 +82,12 @@ router.post("/v1/createBaseInfoCtrl", createBaseInfoCtrl);
 router.put("/v1/updateBaseInfoCtrl/:key", updateBaseInfoCtrl);
 router.get("/v1/retrieveBaseInfoCtrl/:key", retrieveBaseInfoCtrl);
 router.delete("/v1/deleteBaseInfoCtrl/:key", deleteBaseInfoCtrl);
+
+// Edu_Info_Ctrl_Routes
+router.post("/v1/createEduInfoCtrl", createEduInfoCtrl);
+router.put("/v1/updateEduInfoCtrl/:key", updateEduInfoCtrl);
+router.get("/v1/retrieveEduInfoCtrl/:key", retrieveEduInfoCtrl);
+router.delete("/v1/deleteEduInfoCtrl/:key", deleteEduInfoCtrl);
 
 // Exp_Info_Ctrl_Routes
 router.post("/v1/createExpInfoCtrl", createExpInfoCtrl);

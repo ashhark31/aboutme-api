@@ -229,6 +229,216 @@
             }
         },
 
+        "/v1/createEduInfoCtrl": {
+            "post": {
+                "tags": ["Education Info Control"],
+                "summary": "Create Education Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "createEduInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/createEduInfoCtrlObject"
+                            },
+                            "example": [
+                                {
+                                    "key": 512641,
+                                    "degreeName": "Bachelor's",
+                                    "fieldOfStudy": "CSE",
+                                    "startDate": "2023-07-03",
+                                    "endDate": null,
+                                    "currentlyPursuing": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/retrieveEduInfoCtrl/{key}": {
+            "get": {
+                "tags": ["Education Info Control"],
+                "summary": "Retrieve Education Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number"
+                        },
+                        "required": true 
+                    }                    
+                ]
+            }
+        },
+        "/v1/updateEduInfoCtrl/{key}": {
+            "put": {
+                "tags": ["Education Info Control"],
+                "summary": "Update Education Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "body",
+                        "name": "updateEduInfoCtrlObject",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/updateEduInfoCtrlObject"
+                            },
+                            "example": {
+                                "degreeName": "Bachelors",
+                                "fieldOfStudy": "CSE",
+                                "startDate": "2023-07-03",
+                                "endDate": null,
+                                "currentlyPursuing": true
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/v1/deleteEduInfoCtrl/{key}": {
+            "delete": {
+                "tags": ["Education Info Control"],
+                "summary": "Delete Education Info Control",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Record not created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "402": {
+                        "description": "Invalid input params or too large input"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "409": {
+                        "description": "Data already exists"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "number",
+                            "required": true                            
+                        }
+                    }                    
+                ]
+            }
+        },
+
         "/v1/createExpInfoCtrl": {
             "post": {
                 "tags": ["Experience Info Control"],
@@ -1344,6 +1554,7 @@
                             "example": {
                                 "key": 1000001,
                                 "baseInfoCtrlKey": 27072000,
+                                "eduId": [30072022, 30082022],
                                 "empId": [512641, 654565],
                                 "projectId": [121212],
                                 "skillId": 323232,
@@ -1451,12 +1662,13 @@
                                 "$ref": "#/definitions/updateKeyInfoCtrlObject"
                             },
                             "example": {
-                                "key": 27072000,
-                                "key": [512641, 654565],
-                                "key": [121212],
-                                "key": 323232,
-                                "key": [121212],
-                                "key": [454545]
+                                "baseInfoCtrlKey": 27072000,
+                                "eduId": [30072022, 30082022],
+                                "empId": [512641, 654565],
+                                "projectId": [121212],
+                                "skillId": 323232,
+                                "achvmntId": [121212],
+                                "certId": [454545]
                             }
                         }
                     }
@@ -2345,6 +2557,54 @@
             }
         },
 
+        "createEduInfoCtrlObject": {
+            "properties": {
+                "key": {
+                    "type": "number",
+                    "required": true
+                },
+                "degreeName": {
+                    "type": "string",
+                    "required": true
+                },
+                "fieldOfStudy": {
+                    "type": "string",
+                    "required": true
+                },
+                "startDate": {
+                    "type": "string",
+                    "required": true
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "currentlyPursuing": {
+                    "type": "boolean",
+                    "required": true
+                }
+            }
+        },
+        "updateEduInfoCtrlObject": {
+            "properties": {
+                "degreeName": {
+                    "type": "string"
+                },
+                "fieldOfStudy": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
+                },
+                "currentlyPursuing": {
+                    "type": "boolean"
+                }
+            }
+        },
+
+
         "createExpInfoCtrlObject": {
             "properties": {
                 "key": {
@@ -2555,27 +2815,31 @@
                     "type": "number",
                     "required": true
                 },
-                "key": {
+                "baseInfoCtrlKey": {
                     "type": "number",
                     "required": true
                 },
-                "key": {
+                "eduId": {
                     "type": "object",
                     "required": true
                 },
-                "key": {
+                "empId": {
                     "type": "object",
                     "required": true
                 },
-                "key": {
+                "projectId": {
+                    "type": "object",
+                    "required": true
+                },
+                "skillId": {
                     "type": "number",
                     "required": true
                 },
-                "key": {
+                "achvmntId": {
                     "type": "object",
                     "required": true
                 },
-                "key": {
+                "certId": {
                     "type": "object",
                     "required": true
                 }
@@ -2583,22 +2847,25 @@
         },
         "updateKeyInfoCtrlObject": {
             "properties": {
-                "key": {
+                "baseInfoCtrlKey": {
                     "type": "number"
                 },
-                "key": {
+                "eduId": {
                     "type": "object"
                 },
-                "key": {
+                "empId": {
                     "type": "object"
                 },
-                "key": {
+                "projectId": {
+                    "type": "object"
+                },
+                "skillId": {
                     "type": "number"
                 },
-                "key": {
+                "achvmntId": {
                     "type": "object"
                 },
-                "key": {
+                "certId": {
                     "type": "object"
                 }
             }

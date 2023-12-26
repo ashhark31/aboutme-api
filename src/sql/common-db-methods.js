@@ -36,6 +36,35 @@ const createBaseInfoSchema = new Schema({
     { timestamps: true }
 )
 
+const createEduInfoSchema = new Schema({
+    key: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+    degreeName: {
+        type: String,
+        required: true
+    },
+    fieldOfStudy: {
+        type: String,
+        required: true
+    },
+    startDate: {
+        type: Date,
+        required: true
+    },
+    endDate: {
+        type: Date
+    },
+    currentlyPursuing: {
+        type: Boolean,
+        required: true
+    }
+},
+    { timestamps: true }
+)
+
 const createExpInfoSchema = new Schema({
     key: {
         type: Number,
@@ -164,6 +193,10 @@ const createKeyInfoSchema = new Schema({
         type: Number,
         required: true
     },
+    eduId: {
+        type: Object,
+        required: true
+    },
     empId: {
         type: Object,
         required: true
@@ -189,6 +222,7 @@ const createKeyInfoSchema = new Schema({
 )
 
 const BaseInfoModel = mongoose.models['PERSDTLS'] || mongoose.model('PERSDTLS', createBaseInfoSchema);
+const EduInfoModel = mongoose.models['EDUDTLS'] || mongoose.model('EDUDTLS', createEduInfoSchema);
 const ExpInfoModel = mongoose.models['EXPDTLS'] || mongoose.model('EXPDTLS', createExpInfoSchema);
 const ProjectInfoModel = mongoose.models['PROJDTLS'] || mongoose.model('PROJDTLS', createProjectInfoSchema);
 const SkillInfoModel = mongoose.models['SKLLDTLS'] || mongoose.model('SKLLDTLS', createSkillInfoSchema);
@@ -198,6 +232,7 @@ const KeyInfoModel = mongoose.models['KEYDTLS'] || mongoose.model('KEYDTLS', cre
 
 module.exports = {
     BaseInfoModel,
+    EduInfoModel,
     ExpInfoModel,
     ProjectInfoModel,
     SkillInfoModel,
