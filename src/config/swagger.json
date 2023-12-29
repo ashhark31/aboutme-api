@@ -275,10 +275,9 @@
                                 {
                                     "key": 512641,
                                     "degreeName": "Bachelor's",
-                                    "fieldOfStudy": "CSE",
-                                    "startDate": "2023-07-03",
-                                    "endDate": null,
-                                    "currentlyPursuing": true
+                                    "courseName": "CSE",
+                                    "university": "XYZ",
+                                    "graduationYear": "2018-2022"
                                 }
                             ]
                         }
@@ -382,11 +381,10 @@
                                 "$ref": "#/definitions/updateEduInfoCtrlObject"
                             },
                             "example": {
-                                "degreeName": "Bachelors",
-                                "fieldOfStudy": "CSE",
-                                "startDate": "2023-07-03",
-                                "endDate": null,
-                                "currentlyPursuing": true
+                                "degreeName": "Bachelor's",
+                                "courseName": "CSE",
+                                "university": "XYZ",
+                                "graduationYear": "2018-2022"
                             }
                         }
                     }
@@ -2567,39 +2565,35 @@
                     "type": "string",
                     "required": true
                 },
-                "fieldOfStudy": {
+                "courseName": {
                     "type": "string",
                     "required": true
                 },
-                "startDate": {
+                "university": {
                     "type": "string",
                     "required": true
                 },
-                "endDate": {
+                "graduationYear": {
                     "type": "string"
-                },
-                "currentlyPursuing": {
-                    "type": "boolean",
-                    "required": true
                 }
             }
         },
         "updateEduInfoCtrlObject": {
             "properties": {
                 "degreeName": {
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                 },
-                "fieldOfStudy": {
-                    "type": "string"
+                "courseName": {
+                    "type": "string",
+                    "required": true
                 },
-                "startDate": {
-                    "type": "string"
+                "university": {
+                    "type": "string",
+                    "required": true
                 },
-                "endDate": {
+                "graduationYear": {
                     "type": "string"
-                },
-                "currentlyPursuing": {
-                    "type": "boolean"
                 }
             }
         },

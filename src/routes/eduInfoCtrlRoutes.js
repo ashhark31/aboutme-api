@@ -109,10 +109,9 @@ const validateCrtEduInfoCtrl = (body) => {
         if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
         if(typeof data?.key !== "number") return false;
         if(typeof data?.degreeName !== "string")   return false;
-        if(typeof data?.fieldOfStudy !== "string")  return false;
-        if(typeof data?.startDate !== "string") return false;
-        if(data?.endDate && typeof data?.endDate !== "string")  return false;
-        if(typeof data?.currentlyPursuing !== "boolean")   return false;
+        if(typeof data?.courseName !== "string")  return false;
+        if(typeof data?.university !== "string") return false;
+        if(typeof data?.graduationYear !== "string")  return false;
         return true;
     })
 
@@ -124,10 +123,9 @@ const validateUptEduInfoCtrl = (data) => {
     if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
     if(typeof data?.key !== "string")   return false;
     if(data?.body?.degreeName && typeof data?.body?.degreeName !== "string")  return false;
-    if(data?.body?.fieldOfStudy && typeof data?.body?.fieldOfStudy !== "string")  return false;
-    if(data?.body?.startDate && typeof data?.body?.startDate !== "string")  return false;
-    if(data?.body?.endDate && typeof data?.body?.endDate !== "string")  return false;
-    if(data?.body?.currentlyPursuing && typeof data?.body?.currentlyPursuing !== "boolean")  return false;
+    if(data?.body?.courseName && typeof data?.body?.courseName !== "string")  return false;
+    if(data?.body?.university && typeof data?.body?.university !== "string")  return false;
+    if(data?.body?.graduationYear && typeof data?.body?.graduationYear !== "string")  return false;
     return true;
 }
 

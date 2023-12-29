@@ -46,19 +46,16 @@ const createEduInfoSchema = new Schema({
         type: String,
         required: true
     },
-    fieldOfStudy: {
+    courseName: {
         type: String,
         required: true
     },
-    startDate: {
-        type: Date,
+    university: {
+        type: String,
         required: true
     },
-    endDate: {
-        type: Date
-    },
-    currentlyPursuing: {
-        type: Boolean,
+    graduationYear: {
+        type: String,
         required: true
     }
 },
