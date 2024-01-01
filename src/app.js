@@ -65,7 +65,7 @@ const authentication = require("./auth/auth");
 
 // const corsConfig = {credentials: true, origin: 'http://localhost:3000'};
 // const corsConfig = {credentials: true, origin: 'http://localhost:5173'};
-const corsConfig = {credentials: true, origin: ['https://aboutme-ui-service.netlify.app', 'https://ashhar-portfolio.vercel.app']};
+const corsConfig = {credentials: true, origin: ['https://aboutme-ui-service.netlify.app', 'https://about-ashhar.netlify.app']};
 router.use(cors(corsConfig))
 // router.options('*', cors())
 router.use(bodyParser.json({ limit: "999mb" }))
