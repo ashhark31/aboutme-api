@@ -31,10 +31,9 @@ const updateBaseInfoCtrlDetails = async (reqData) => {
             return { status: 400, message: 'Nothing to be update!' }
         }
 
-        const query = { baseInfoCtrlKey: Number(reqData?.key) };
+        const query = { key: Number(reqData?.key) };
         const updateData = reqData?.body;
-        const result = await BaseInfoModel.findOneAndUpdate(query,updateData, {
-            new: true
+        const result = await BaseInfoModel.findOneAndUpdate(query,updateData, {            new: true
         })
         return { status: 200, response: result};
 
