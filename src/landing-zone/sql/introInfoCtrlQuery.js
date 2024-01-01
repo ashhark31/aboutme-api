@@ -49,7 +49,7 @@ const updateIntroInfoCtrlDetails = async (reqData) => {
 const retrieveIntroInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await IntroInfoModel.find({});
+            const result = await IntroInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
         const query = { key: Number(reqId?.key) };

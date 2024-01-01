@@ -66,7 +66,7 @@ const updateExpInfoCtrlDetails = async (reqData) => {
 const retrieveExpInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await ExpInfoModel.find({});
+            const result = await ExpInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

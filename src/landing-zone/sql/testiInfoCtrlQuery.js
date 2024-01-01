@@ -50,7 +50,7 @@ const updateTestiInfoCtrlDetails = async (reqData) => {
 const retrieveTestiInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await TestiInfoModel.find({});
+            const result = await TestiInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

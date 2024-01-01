@@ -48,7 +48,7 @@ const updateKeyInfoCtrlDetails = async (reqData) => {
 const retrieveKeyInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await KeyInfoModel.find({});
+            const result = await KeyInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

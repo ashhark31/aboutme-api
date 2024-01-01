@@ -65,7 +65,7 @@ const updateCrtInfoCtrlDetails = async (reqData) => {
 const retrieveCrtInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await CrtificationInfoModel.find({});
+            const result = await CrtificationInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

@@ -48,7 +48,7 @@ const updateBaseInfoCtrlDetails = async (reqData) => {
 const retrieveBaseInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await BaseInfoModel.find({});
+            const result = await BaseInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
         

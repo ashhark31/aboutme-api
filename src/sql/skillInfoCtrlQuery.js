@@ -48,7 +48,7 @@ const updateSkillInfoCtrlDetails = async (reqData) => {
 const retrieveSkillInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await SkillInfoModel.find({});
+            const result = await SkillInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

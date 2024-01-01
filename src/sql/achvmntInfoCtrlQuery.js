@@ -65,7 +65,7 @@ const updateAchvmntInfoCtrlDetails = async (reqData) => {
 const retrieveAchvmntInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await AchvmntInfoModel.find({});
+            const result = await AchvmntInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

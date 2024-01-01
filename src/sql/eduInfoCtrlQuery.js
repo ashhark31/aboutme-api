@@ -66,7 +66,7 @@ const updateEduInfoCtrlDetails = async (reqData) => {
 const retrieveEduInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await EduInfoModel.find({});
+            const result = await EduInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 

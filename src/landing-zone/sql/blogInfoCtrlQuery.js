@@ -49,7 +49,7 @@ const updateBlogInfoCtrlDetails = async (reqData) => {
 const retrieveBlogInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await BlogInfoModel.find({});
+            const result = await BlogInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
         const query = { key: Number(reqId?.key) };

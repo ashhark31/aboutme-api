@@ -64,7 +64,7 @@ const updateProjectInfoCtrlDetails = async (reqData) => {
 const retrieveProjectInfoCtrlDetails = async(reqId) => {
     try{
         if(isNaN(reqId?.key)){
-            const result = await ProjectInfoModel.find({});
+            const result = await ProjectInfoModel.find({}).sort({key:1});
             return { status: 200, response: result};
         }
 
