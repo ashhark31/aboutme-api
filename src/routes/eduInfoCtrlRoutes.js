@@ -105,13 +105,14 @@ const deleteEduInfoCtrl = async (req,res) => {
 
 //Schama
 const validateCrtEduInfoCtrl = (body) => {
-    let response = body.data.map((data) => {
+    let response = body?.data.map((data) => {
         if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
         if(typeof data?.key !== "number") return false;
         if(typeof data?.degreeName !== "string")   return false;
         if(typeof data?.courseName !== "string")  return false;
         if(typeof data?.university !== "string") return false;
         if(typeof data?.graduationYear !== "string")  return false;
+        if(data?.universityProfileCtrl && typeof data?.universityProfileCtrl !== "string")   return false;
         return true;
     })
 
@@ -126,6 +127,7 @@ const validateUptEduInfoCtrl = (data) => {
     if(data?.body?.courseName && typeof data?.body?.courseName !== "string")  return false;
     if(data?.body?.university && typeof data?.body?.university !== "string")  return false;
     if(data?.body?.graduationYear && typeof data?.body?.graduationYear !== "string")  return false;
+    if(data?.body?.universityProfileCtrl && typeof data?.body?.universityProfileCtrl !== "string")   return false;
     return true;
 }
 

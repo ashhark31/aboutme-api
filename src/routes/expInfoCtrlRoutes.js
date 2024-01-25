@@ -105,7 +105,7 @@ const deleteExpInfoCtrl = async (req,res) => {
 
 //Schama
 const validateCrtExpInfoCtrl = (body) => {
-    let response = body.data.map((data) => {
+    let response = body?.data.map((data) => {
         if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
         if(typeof data?.key !== "number") return false;
         if(typeof data?.companyName !== "string")   return false;
@@ -114,6 +114,7 @@ const validateCrtExpInfoCtrl = (body) => {
         if(data?.endDate && typeof data?.endDate !== "string")  return false;
         if(typeof data?.currentlyWorking !== "boolean")   return false;
         if(data?.description && typeof data?.description !== "string")  return false;
+        if(data?.companyProfileCtrl && typeof data?.companyProfileCtrl !== "string")  return false;
         return true;
     })
 
@@ -130,6 +131,7 @@ const validateUptExpInfoCtrl = (data) => {
     if(data?.body?.endDate && typeof data?.body?.endDate !== "string")  return false;
     if(data?.body?.currentlyWorking && typeof data?.body?.currentlyWorking !== "boolean")  return false;
     if(data?.body?.description && typeof data?.body?.description !== "string")  return false;
+    if(data?.body?.companyProfileCtrl && typeof data?.body?.companyProfileCtrl !== "string")  return false;
     return true;
 }
 

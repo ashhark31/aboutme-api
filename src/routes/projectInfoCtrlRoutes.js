@@ -104,13 +104,14 @@ const deleteProjectInfoCtrl = async (req,res) => {
 
 
 const validateCrtProjInfoCtrl = (body) => {
-    let response = body.data.map((data) => {
+    let response = body?.data.map((data) => {
         if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
         if(typeof data?.key !== "number") return false;
         if(typeof data?.projectTitle !== "string")   return false;
         if(data?.url && typeof data?.url !== "string")  return false;
         if(data?.techUsed && typeof data?.techUsed !== "object")   return false;
         if(data?.description && typeof data?.description !== "string")  return false;
+        if(data?.projectImgCtrl && typeof data?.projectImgCtrl !== "string")  return false;
     })
 
     if(response.includes(false))   return false;
@@ -124,6 +125,7 @@ const validateUptProjInfoCtrl = (data) => {
     if(data?.body?.url && typeof data?.body?.url !== "string")  return false;
     if(data?.body?.techUsed && typeof data?.body?.techUsed !== "object")   return false;
     if(data?.body?.description && typeof data?.body?.description !== "string")  return false;
+    if(data?.body?.projectImgCtrl && typeof data?.body?.projectImgCtrl !== "string")  return false;
     return true;
 }
 

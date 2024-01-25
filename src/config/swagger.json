@@ -277,7 +277,8 @@
                                     "degreeName": "Bachelor's",
                                     "courseName": "CSE",
                                     "university": "XYZ",
-                                    "graduationYear": "2018-2022"
+                                    "graduationYear": "2018-2022",
+                                    "universityProfileCtrl": ""
                                 }
                             ]
                         }
@@ -384,7 +385,8 @@
                                 "degreeName": "Bachelor's",
                                 "courseName": "CSE",
                                 "university": "XYZ",
-                                "graduationYear": "2018-2022"
+                                "graduationYear": "2018-2022",
+                                "universityProfileCtrl": ""
                             }
                         }
                     }
@@ -487,7 +489,8 @@
                                     "startDate": "2023-07-03",
                                     "endDate": null,
                                     "currentlyWorking": true,
-                                    "description": "Worked as a Full Stack Developer"
+                                    "description": "Worked as a Full Stack Developer",
+                                    "companyProfileCtrl": ""
                                 }
                             ]
                         }
@@ -596,7 +599,8 @@
                                 "startDate": "2023-07-03",
                                 "endDate": null,
                                 "currentlyWorking": true,
-                                "description": "Worked as a Full Stack Developer"
+                                "description": "Worked as a Full Stack Developer",
+                                "companyProfileCtrl": ""
                             }
                         }
                     }
@@ -697,7 +701,8 @@
                                     "projectTitle": "myPortfolio",
                                     "url": "https://www.myPortfolio.com",
                                     "techUsed": ["React.JS", "Express.JS", "MongoDB", "Node.JS"],
-                                    "description": "Presenting personal portfolio website using MERN stack."
+                                    "description": "Presenting personal portfolio website using MERN stack.",
+                                    "projectImgCtrl": ""
                                 }
                             ]
                         }
@@ -804,7 +809,8 @@
                                 "projectTitle": "myPortfolio",
                                 "url": "https://www.myPortfolio.com",
                                 "techUsed": ["React.JS", "Express.JS", "MongoDB", "Node.JS"],
-                                "description": "Presenting personal portfolio website using MERN stack."
+                                "description": "Presenting personal portfolio website using MERN stack.",
+                                "projectImgCtrl": ""
                             }
                         }
                     }
@@ -1142,7 +1148,8 @@
                                     "key": 121212,
                                     "achvmntTitle": "Problem Solving",
                                     "url": "https://www.hackerrank.com",
-                                    "description": "4 star coder"
+                                    "description": "4 star coder",
+                                    "achvmntProfileCtrl": ""
                                 }
                             ]
                         }
@@ -1248,7 +1255,8 @@
                             "example":  {
                                 "achvmntTitle": "Problem Solving",
                                 "url": "https://www.hackerrank.com",
-                                "description": "4 star coder"
+                                "description": "4 star coder",
+                                "achvmntProfileCtrl": ""
                             }
                         }
                     }
@@ -1348,7 +1356,8 @@
                                     "key": 454545,
                                     "certName": "Python",
                                     "url": "drive.google.com",
-                                    "description": "Python Certification"
+                                    "description": "Python Certification",
+                                    "crtProfileCtrl": ""
                                 }
                             ]
                         }
@@ -1454,7 +1463,8 @@
                             "example":  {
                                 "certName": "Python",
                                 "url": "drive.google.com",
-                                "description": "Python Certification"
+                                "description": "Python Certification",
+                                "crtProfileCtrl": ""
                             }
                         }
                     }
@@ -2575,6 +2585,9 @@
                 },
                 "graduationYear": {
                     "type": "string"
+                },
+                "universityProfileCtrl": {
+                    "type": "string"
                 }
             }
         },
@@ -2593,6 +2606,9 @@
                     "required": true
                 },
                 "graduationYear": {
+                    "type": "string"
+                },
+                "universityProfileCtrl": {
                     "type": "string"
                 }
             }
@@ -2626,6 +2642,9 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "companyProfileCtrl": {
+                    "type": "string"
                 }
             }
         },
@@ -2648,7 +2667,10 @@
                 },
                 "description": {
                     "type": "string"
-                }
+                },
+                "companyProfileCtrl": {
+                    "type": "string"
+                }                
             }
         },
 
@@ -2670,6 +2692,9 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "projectImgCtrl": {
+                    "type": "string"
                 }
             }
         },
@@ -2685,6 +2710,9 @@
                     "type": "object"
                 },
                 "description": {
+                    "type": "string"
+                },
+                "projectImgCtrl": {
                     "type": "string"
                 }
             }
@@ -2754,6 +2782,9 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "achvmntProfileCtrl": {
+                    "type": "string"
                 }
             }
         },
@@ -2766,6 +2797,9 @@
                     "type": "string"
                 },
                 "description": {
+                    "type": "string"
+                },
+                "achvmntProfileCtrl": {
                     "type": "string"
                 }
             }
@@ -2786,6 +2820,9 @@
                 },
                 "description": {
                     "type": "string"
+                },
+                "crtProfileCtrl": {
+                    "type": "string"
                 }
             }
         },
@@ -2798,6 +2835,9 @@
                     "type": "string"
                 },
                 "description": {
+                    "type": "string"
+                },
+                "crtProfileCtrl": {
                     "type": "string"
                 }
             }

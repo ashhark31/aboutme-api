@@ -104,12 +104,13 @@ const deleteCrtInfoCtrl = async (req,res) => {
 
 
 const validateCrtCrtInfoCtrl = (body) => {
-    let response = body.data.map((data) => {
+    let response = body?.data.map((data) => {
         if(!data || Object.keys(data).length === 0 || JSON.stringify(data) === "{}")    return false;
         if(typeof data?.key !== "number") return false;
         if(typeof data?.certName !== "string")   return false;
         if(data?.url && typeof data?.url !== "string")  return false;
         if(data?.description && typeof data?.description !== "string")  return false;
+        if(data?.crtProfileCtrl && typeof data?.crtProfileCtrl !== "string")  return false;
     })
 
     if(response.includes(false))   return false;
@@ -122,6 +123,7 @@ const validateUptCrtInfoCtrl = (data) => {
     if(data?.body?.certName && typeof data?.body?.certName !== "string")   return false;
     if(data?.body?.url && typeof data?.body?.url !== "string")  return false;
     if(data?.body?.description && typeof data?.body?.description !== "string")  return false;
+    if(data?.body?.crtProfileCtrl && typeof data?.body?.crtProfileCtrl !== "string")  return false;
     return true;
 }
 

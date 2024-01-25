@@ -57,7 +57,8 @@ const createEduInfoSchema = new Schema({
     graduationYear: {
         type: String,
         required: true
-    }
+    },
+    universityProfileCtrl: String
 },
     { timestamps: true }
 )
@@ -89,7 +90,8 @@ const createExpInfoSchema = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    companyProfileCtrl: String
 },
     { timestamps: true }
 )
@@ -112,7 +114,8 @@ const createProjectInfoSchema = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    projectImgCtrl: String
 },
     { timestamps: true }
 )
@@ -155,7 +158,8 @@ const createAchvmntInfoSchama = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    achvmntProfileCtrl: String
 },
     { timestamps: true }
 )
@@ -175,7 +179,8 @@ const createCrtificationInfoSchema = new Schema({
     },
     description: {
         type: String
-    }
+    },
+    crtProfileCtrl: String
 },
     { timestamps: true }
 )
